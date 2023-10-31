@@ -1,0 +1,21 @@
+image:
+  tag: "431"
+server:
+  workers: 3
+coordinator:
+  jvm:
+    maxHeapSize: "8G"
+worker:
+  jvm:
+    maxHeapSize: "8G"
+additionalCatalogs:
+  rdbms: |-
+    connector.name=postgresql
+    connection-url=jdbc:postgresql://example.net:5432/database
+    connection-user=root
+    connection-password=secret
+  kafka: |-
+    connector.name=kafka
+    kafka.table-names=example_table
+    kafka.nodes=kafka.example.net:9092
+    kafka.security-protocol=SSL
